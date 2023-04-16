@@ -49,11 +49,13 @@ int main(void){
         printf("%x %d\n", u , matched);
 
     }
+ 
     {
     char cleanup[STRLEN]={'\0'};
 
     fgets(cleanup,STRLEN,stdin);
     }
+ 
     {//float
 
     float f=0.0;
