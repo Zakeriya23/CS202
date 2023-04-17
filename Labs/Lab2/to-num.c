@@ -1,6 +1,6 @@
 //Zakeriya Muhumed || PSU CS201 || Lab 2 || Char in octal, decimal, hex
 #include <stdio.h>
-
+//gcc -g -Wall -o to-num to-num.c
 #define STRLEN 300
 
 int main(void){
