@@ -1,9 +1,5 @@
-//Zakeriya Muhumed || CS201 || Lab 2
-
+//Zakeriya Muhumed || PSU CS201 || Lab 2 || Char in octal, decimal, hex
 #include <stdio.h>
-
-//gcc -g -Wall -o to-num to-num.c
-// ./to-num
 
 #define STRLEN 300
 
@@ -33,6 +29,6 @@ int main(void){
         printf("%#X ", str1[i++]);
      }
      printf("\n");
-
+    
     return 0;
 }
