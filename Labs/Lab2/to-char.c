@@ -2,41 +2,69 @@
 #include <stdio.h>
 #include <string.h>
 
-#define STRLEN 300
+#define STRLEN 500
 int main(void){
     int choice = 0;
-    int decimal = 0;
-    int octal = 0;
-    int hex = 0;
-    scanf("%d", &choice);
+    char *part;
+    char p[STRLEN] = {" "};
+    char str[STRLEN] = {'\0'};
 
+	fgets(str, STRLEN, stdin);
+	sscanf(str,"%d", &choice);
+	
     switch (choice){
     case 8:
         printf("octal input\n");
-        scanf("%o", &octal);
-        while(octal != 0){
-            printf("%c", octal);
-            scanf("%o", &octal);
-        } 
-        printf("\n"); 
+		while(fgets(str, STRLEN, stdin) != NULL) 	
+		{
+			part = strtok(str, p);
+			for(int i = 0;part != NULL;++i)
+			{	
+				sscanf(part, "%o", &choice);
+				if(choice == 0)
+				{
+					break;
+				}
+				printf("%c" ,choice); 
+				part = strtok(NULL, p);
+			}
+			printf("\n");
+        }
         break;
     case 10:
         printf("decimal input\n");
-        scanf("%d", &decimal);
-        while(decimal != 0){
-            printf("%c", decimal);
-            scanf("%d", &decimal);
-        }
-        printf("\n"); 
+		while(fgets(str, STRLEN, stdin) != NULL) 	
+		{
+			part = strtok(str, p);
+			for(int i = 0;part != NULL; ++i)
+			{
+				sscanf(part, "%d", &choice);
+				if(choice== 0)
+				{
+					break;
+				}
+				printf("%c" , choice); 
+				part = strtok(NULL, p);
+			}
+			printf("\n");
+		}
         break;
     case 16:
-        printf("hex input\n");
-        scanf("%x", &hex);
-        while(hex != 0){
-            printf("%c", hex);
-            scanf("%x", &hex);
-        } 
-        printf("\n"); 
-        break;
+      	printf("hex input\n");
+		while(fgets(str, STRLEN, stdin) != NULL) 	
+		{
+			part = strtok(str, p);
+			for(int i = 0;part != NULL;++i)
+			{
+				sscanf(part, "%x", &choice);
+				if(choice == 0)
+				{
+					break;
+				}
+				printf("%c" ,choice); 
+				part = strtok(NULL, p);
+			}
+			printf("\n");
+		}			
     }
 }
